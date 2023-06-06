@@ -12,4 +12,9 @@ public class EmailExtractionReport extends ExtractionReport {
     public String getReportName() {
         return "Emails";
     }
+
+    @Override
+    public String clean(String input) {
+        return input.toLowerCase();
+    }
 }

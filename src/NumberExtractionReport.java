@@ -12,4 +12,9 @@ public class NumberExtractionReport extends ExtractionReport {
     public String getReportName() {
         return "PhoneNumbers";
     }
+
+    @Override
+    public String clean(String input) {
+        return input;
+    }
 }

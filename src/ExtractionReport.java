@@ -10,6 +10,8 @@ abstract public class ExtractionReport {
 
     public abstract String getReportName();
 
+    public abstract String clean(String input);
+
     private String parse(String path) throws FileNotFoundException {
         String out = "";
         File file = new File(path);
@@ -25,7 +27,7 @@ abstract public class ExtractionReport {
 
             boolean matches = matcher.matches();
             if (matches) {
-                out += nextLine + "\n";
+                out += clean(nextLine) + "\n";
             }
         }
         return out.isBlank() ? "Empty file" : out;
